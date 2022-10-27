@@ -10,13 +10,14 @@ public class DbFileHandler {
         this.dbFile = new RandomAccessFile(dbFileName, "rw");
     }
     //db for that buggati
-    //todo: may refactor later to be more generic?
+    //todo: may refactor later to be a more generic db
     public boolean addData(String name,
                            int age,
                            String address,
                            String plateNumber,
                            String description) throws IOException {
         this.dbFile.seek(this.dbFile.length());
+        //todo: refactor later to remove magic numbers
         int recordLength =  4 +
                 name.length() +
                 4 +
