@@ -4,4 +4,4 @@ I'm learning how database systems and engines work internally, so I'm learning t
 
 ---
 
-as of now test.db is the output
+as of now ```test.db``` is the output
