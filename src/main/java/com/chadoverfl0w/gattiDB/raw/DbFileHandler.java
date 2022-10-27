@@ -1,4 +1,4 @@
-package com.chadoverfl0w.raw;
+package com.chadoverfl0w.gattiDB.raw;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
