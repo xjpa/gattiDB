@@ -28,7 +28,3 @@ Milestones and TODO
 - refactor the DB system to be generic
 - implement our own SQL
 - implement own special cache
-
---- 
-
-what color is your bugatti
