@@ -5,3 +5,24 @@ I'm learning how database systems and engines work internally, so I'm learning t
 ---
 
 as of now ```test.db``` is the db output file
+
+--- 
+
+Milestones and TODO
+
+- implement basic file handling operations
+- make quick impelementaiton to handle specific data (cars)
+- implement DB indexing
+- implement deletion
+- implemenet update
+- implement index loading
+- implement search
+- implement regex search support
+- implement DB defragmentation
+- improve transaction handling
+- implement transaction commits
+- impelement rollback
+- write server test app
+- refactor the DB system to be generic
+- implement our own SQL
+- implement own special cache
