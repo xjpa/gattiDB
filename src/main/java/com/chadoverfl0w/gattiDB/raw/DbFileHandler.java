@@ -1,8 +1,6 @@
 package com.chadoverfl0w.gattiDB.raw;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 
 public class DbFileHandler {
@@ -49,6 +47,44 @@ public class DbFileHandler {
 
         return true;
     }
+    public Owner readDbRow(int dbRowNumber) throws IOException {
+        byte[] row = this.readRecordRawBytes(dbRowNumber);
+        Owner owner = new Owner();
+        DataInputStream stream = new DataInputStream(new ByteArrayInputStream(row));
+
+        //reading stuff: name, age, address, plate #, description
+        int nameLength = stream.readInt();
+        byte[] byteArray = new byte[nameLength];
+        owner.name = new String(byteArray);
+
+        owner.age = stream.readInt();
+
+        byteArray = new byte[stream.readInt()];
+        stream.read(byteArray);
+        owner.address = new String(byteArray);
+
+        byteArray = new byte[stream.readInt()];
+        stream.read(byteArray);
+        owner.plateNumber = new String(byteArray);
+
+        byteArray = new byte[stream.readInt()];
+        stream.read(byteArray);
+        owner.description = new String(byteArray);
+
+        return owner;
+    }
+    //read the raw bytes
+    private byte[] readRecordRawBytes(int dbRowNumber) throws IOException {
+        this.dbFile.seek(0);
+        if (this.dbFile.readBoolean())
+            return new byte[0];
+        this.dbFile.seek(dbRowNumber + 1);
+        int recordLength = this.dbFile.readInt();
+        byte[] data = new byte[recordLength];
+        this.dbFile.read(data);
+        return data;
+    }
+
     public void closeDbFile() throws IOException {
         this.dbFile.close();
     }
