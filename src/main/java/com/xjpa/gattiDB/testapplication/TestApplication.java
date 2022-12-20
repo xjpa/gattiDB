@@ -1,6 +1,6 @@
-package com.chadoverfl0w.gattiDB.testapplication;
+package com.xjpa.gattiDB.testapplication;
 
-import com.chadoverfl0w.gattiDB.raw.DbFileHandler;
+import com.xjpa.gattiDB.raw.DbFileHandler;
 
 public class TestApplication {
     public static void main(String[] args) {

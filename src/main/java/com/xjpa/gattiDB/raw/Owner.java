@@ -1,4 +1,4 @@
-package com.chadoverfl0w.gattiDB.raw;
+package com.xjpa.gattiDB.raw;
 
 public class Owner {
     public String name;

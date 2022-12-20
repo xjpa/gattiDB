@@ -1,4 +1,4 @@
-package com.chadoverfl0w.gattiDB.raw;
+package com.xjpa.gattiDB.raw;
 
 import java.io.*;
 
