@@ -47,7 +47,7 @@ public class DbFileHandler {
 
         return true;
     }
-        public Owner readDbRow(int dbRowNumber) throws IOException {
+    public Owner readDbRow(int dbRowNumber) throws IOException {
         byte[] row = this.readRecordRawBytes(dbRowNumber);
         Owner owner = new Owner();
         DataInputStream stream = new DataInputStream(new ByteArrayInputStream(row));
